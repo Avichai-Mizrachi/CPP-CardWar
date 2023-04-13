@@ -83,59 +83,58 @@ void Game ::playTurn()
         this->resetPrinter = "";
     }
 
-    string card1print = "";
-    if (card1.getValue() == 1)
-    {
-        card1print = card1print + "Ace of " + card1.getType();
-    }
-    else if (card1.getValue() == 11)
-    {
-        card1print = card1print + "Jack of " + card1.getType();
-    }
-    else if (card1.getValue() == 12)
-    {
-        card1print = card1print + "Queen of " + card1.getType();
-    }
-    else if (card1.getValue() == 13)
-    {
-        card1print = card1print + "King of " + card1.getType();
-    }
-    else
-    {
-        card1print = card1print + to_string(card1.getValue()) + " of " + card1.getType();
-    }
-
-    string card2print = "";
-    if (card2.getValue() == 1)
-    {
-        card2print = card2print + "Ace of " + card2.getType();
-    }
-    else if (card2.getValue() == 11)
-    {
-        card2print = card2print + "Jack of " + card2.getType();
-    }
-    else if (card2.getValue() == 12)
-    {
-        card2print = card2print + "Queen of " + card2.getType();
-    }
-    else if (card2.getValue() == 13)
-    {
-        card2print = card2print + "King of " + card2.getType();
-    }
-    else
-    {
-        card2print = card2print + to_string(card2.getValue()) + " of " + card2.getType();
-    }
-
     // In case player1 won
     if (card1.compareto(card2) == 1)
     {
+        card1print = "";
+        if (card1.getValue() == 1)
+        {
+            card1print = card1print + "Ace of " + card1.getType();
+        }
+        else if (card1.getValue() == 11)
+        {
+            card1print = card1print + "Jack of " + card1.getType();
+        }
+        else if (card1.getValue() == 12)
+        {
+            card1print = card1print + "Queen of " + card1.getType();
+        }
+        else if (card1.getValue() == 13)
+        {
+            card1print = card1print + "King of " + card1.getType();
+        }
+        else
+        {
+            card1print = card1print + to_string(card1.getValue()) + " of " + card1.getType();
+        }
+
+        card2print = "";
+        if (card2.getValue() == 1)
+        {
+            card2print = card2print + "Ace of " + card2.getType();
+        }
+        else if (card2.getValue() == 11)
+        {
+            card2print = card2print + "Jack of " + card2.getType();
+        }
+        else if (card2.getValue() == 12)
+        {
+            card2print = card2print + "Queen of " + card2.getType();
+        }
+        else if (card2.getValue() == 13)
+        {
+            card2print = card2print + "King of " + card2.getType();
+        }
+        else
+        {
+            card2print = card2print + to_string(card2.getValue()) + " of " + card2.getType();
+        }
         this->player1.states("win", this->deckSize);
         this->player1.states("lose", 0);
 
         this->lastTurn = this->lastTurn + this->player1.getName() + " played " + card1print + "\n" +
                          this->player2.getName() + " played " + card2print + "\n" +
-                         "Congratulations!!" + this->player1.getName() + " has won!";
+                         "Congratulations!!" + this->player1.getName() + " has won!\n\n";
         this->resetPrinter = true;
         this->deckSize = 0;
         this->gameLog = this->gameLog + this->lastTurn + "\n\n\n";
@@ -143,12 +142,54 @@ void Game ::playTurn()
     // In case player2 won
     else if (card1.compareto(card2) == -1)
     {
+        if (card1.getValue() == 1)
+        {
+            card1print = card1print + "Ace of " + card1.getType();
+        }
+        else if (card1.getValue() == 11)
+        {
+            card1print = card1print + "Jack of " + card1.getType();
+        }
+        else if (card1.getValue() == 12)
+        {
+            card1print = card1print + "Queen of " + card1.getType();
+        }
+        else if (card1.getValue() == 13)
+        {
+            card1print = card1print + "King of " + card1.getType();
+        }
+        else
+        {
+            card1print = card1print + to_string(card1.getValue()) + " of " + card1.getType();
+        }
+
+        card2print = "";
+        if (card2.getValue() == 1)
+        {
+            card2print = card2print + "Ace of " + card2.getType();
+        }
+        else if (card2.getValue() == 11)
+        {
+            card2print = card2print + "Jack of " + card2.getType();
+        }
+        else if (card2.getValue() == 12)
+        {
+            card2print = card2print + "Queen of " + card2.getType();
+        }
+        else if (card2.getValue() == 13)
+        {
+            card2print = card2print + "King of " + card2.getType();
+        }
+        else
+        {
+            card2print = card2print + to_string(card2.getValue()) + " of " + card2.getType();
+        }
         this->player1.states("lose", 0);
         this->player1.states("win", this->deckSize);
 
         this->lastTurn = this->lastTurn + this->player1.getName() + " played " + card1print + "\n" +
                          this->player2.getName() + " played " + card2print + "\n" +
-                         "Congratulations!!" + this->player2.getName() + " has won!";
+                         "Congratulations!!" + this->player2.getName() + " has won!\n\n";
         this->resetPrinter = true;
         this->deckSize = 0;
         this->gameLog = this->gameLog + this->lastTurn + "\n\n\n";

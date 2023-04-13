@@ -21,6 +21,8 @@ class Game
     string lastTurn;
     bool resetPrinter = true;
     string type;
+    string card1print;
+    string card2print;
 
 public:
     Game(Player& player1, Player& player2);
